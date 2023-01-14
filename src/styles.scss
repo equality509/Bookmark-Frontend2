@@ -1,0 +1,69 @@
+$maincolor: black;
+$contrastcolor: white;
+
+@mixin white-text-black-bg {
+    color: $contrastcolor;
+    background-color: $maincolor;
+}
+
+
+
+nav {
+    @include white-text-black-bg;
+    display: flex;
+    justify-content: flex-start;
+
+    a {
+        @include white-text-black-bg;
+
+        div{
+            margin: 10px;
+            font-size: large;
+        }
+    }
+}
+
+$imagesize: 300px;
+$cardpadding: 10px;
+
+img{
+    width: $imagesize;
+    height: $imagesize;
+    border-radius: 90px;
+    object-fit: cover;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc($imagesize + $cardpadding), max-content));
+    grid-gap: 16px;
+    justify-content: center;
+    .card{
+        border: 1px black solid;
+        border-radius: 5px;
+        padding: $cardpadding
+    }
+}
+
+
+@mixin black-text-white-bg{
+    color: $maincolor;
+    background-color: $contrastcolor;
+}
+
+section,
+div{
+    form{
+        input{
+            @include white-text-black-bg();
+            padding: 10px;
+            font-size: 1.1em;
+            margin: 10px;
+
+
+            &[type="submit"]:hover{
+                @include black-text-white-bg()
+            }
+        }
+    }
+}
