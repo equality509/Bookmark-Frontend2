@@ -1,23 +1,22 @@
 import { redirect } from "react-router-dom"
 
-const URL = 'https://peopleapi.onrender.com'
+const URL = 'http://localhost:4000'
 
 export const createAction = async ({ request }) => {
   // get data from form
   const formData = await request.formData()
   // set up our new person to match schema
-  const newPerson = {
-    name: formData.get("name"),
-    image: formData.get("image"),
+  const newBookmark = {
+    url: formData.get("url"),
     title: formData.get("title"),
   }
   // Send new person to our API
-  await fetch(URL + "/people", {
+  await fetch(URL + "/bookmarks", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(newPerson),
+    body: JSON.stringify(newBookmark),
   })
   // redirect to index
   return redirect("/")
