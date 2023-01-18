@@ -1,4 +1,4 @@
-import { useLoaderData, Form, Link } from "react-router-dom";
+import { useLoaderData, Form } from "react-router-dom";
 
 
 
@@ -18,10 +18,16 @@ function Index(props) {
         
             {bookmarks.map((bookmark) => (
                 <div className="bookmarkEntry" key={bookmark._id}>
-                    <Link to={`/${bookmark._id}`}>
-                        <h1>{bookmark.title}</h1>
-                        <a href={bookmark.url} target="_blank"></a>
-                    </Link>
+            
+           <h2>Update <a href={bookmark.url} alt={bookmark.title}>{bookmark.title} </a></h2>
+        <Form action={`/update/${bookmark._id}`} method="post">
+            <input type="input" name="title" defaultValue={bookmark.title}/>
+            <input type="input" name="url" defaultValue={bookmark.url}/>
+            <input type="submit" value={`update ${bookmark.title}`}/>
+        </Form>  
+        <Form action={`/delete/${bookmark._id}`} method="post">
+            <input type="submit" value={`delete ${bookmark.title}`}/>
+        </Form>
                 </div>
             ))}
     </div>
