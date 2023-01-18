@@ -20,17 +20,22 @@ function Index(props) {
                 <input type="submit" value="Create Bookmark" />
             </Form>
 
-            <h2>People</h2>
+            <h2>Bookmarks</h2>
             <div className='container'>
                 {people.map((person) => (
                     <div className="card" key={person._id}>
                         {/* <Link to={`${person.url}`} className="person">
                             <h1>{person.title}</h1>
                         </Link> */}
-                        <a href={person.url} alt={person.name} >{person.title}</a>
-                        <h3>{person.title}</h3>
+                        <a href={person.url} alt={person.title} >{person.title}</a>
+                        <h3>{person.title}</h3>               
+      <Form action={`/delete/${person._id}`} method="post">
+      <input type="submit" value={`delete ${person.title}`} />
+      </Form>
                     </div>
+                    
                 ))}
+                
             </div>
         </div>
     );

@@ -13,7 +13,10 @@ const router = createBrowserRouter(
   createRoutesFromElements(
 
       <Route path="/" element={<App/>}>
-              <Route path="" element={<Index/>} loader={bookmarksLoader} />
+              <Route path="" 
+              element={<Index/>} 
+              loader={bookmarksLoader} 
+              action={deleteAction}/>
               
               <Route path='create' action={createAction}/>
               <Route path="update/:id" action={updateAction}/>

@@ -1,4 +1,4 @@
-const URL = 'http://localhost:4000'
+const URL = 'https://bookmarkapi.onrender.com'
 
 export const bookmarksLoader = async () => {
     const response = await fetch(URL + "/bookmarks")

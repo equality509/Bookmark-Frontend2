@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom"
 
-const URL = 'http://localhost:4000'
+const URL = 'https://bookmarkapi.onrender.com'
 
 export const createAction = async ({ request }) => {
   // get data from form
@@ -45,7 +45,7 @@ export const updateAction = async ({request, params}) => {
 
 export const deleteAction = async ({params}) => {
     // delete person with our API
-    await fetch(URL + "/people/" + params.id, {
+    await fetch(URL  /+ params.id, {
         method: "delete"
     })
     // redirect to index
