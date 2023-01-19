@@ -1,9 +1,9 @@
-Bookmark’d App
+# Bookmark’d App
 This is a bookmark app that lets users add a title and a link to helpful websites in their coding journey.
-Group members: Eric Turner, Semih Buyuksariyildiz, Mandana Yousefi-Ghadim, Jacob Thornburg
-Trello Board Link
+## Group members: Eric Turner, Semih Buyuksariyildiz, Mandana Yousefi-Ghadim, Jacob Thornburg
+## Trello Board Link
 https://trello.com/b/WRjd95zf/group-project-1
-Technologies Used
+<h1>**Technologies Used<h1>
 JavaScript
 HTML
 CSS
@@ -12,7 +12,15 @@ React
 MongoDB
 render.com
 
-Daily Plan
+|Routes|Method|EndPoints|Expected Result|
+|------|:---:|:---:|:----|
+|Index|GET|/bookmarkd|Gets all entries |
+|Create|POST|/bookmarkd|Creates new entry |
+|Update|PUT|/bookmarkd/:id|Updates existing entry |
+|Delete|DELETE|/bookmarkd/:id|Removes entry from database|
+
+
+**Daily Plan
 Day 1- Become acquianted with each other. Set up Slack for communication and to set up a time to discuss plans of action.
 Day 2- Have a voice call. Talk about what the final goal of the Bookmark'd project is. Create and fill out Trello board for project. Divide steps of project into tickets. Each member will claim one ticket to start with.
 Day 3- Project members work on tickets on their own time. Will continue talking on Slack, updating each other. 
